@@ -2,23 +2,62 @@ package br.com.fiap.exercicio1.dto;
 
 import java.math.BigDecimal;
 
+import org.springframework.stereotype.Component;
+
+import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+@EqualsAndHashCode
+@NoArgsConstructor
+@AllArgsConstructor
+@Component
 public class OrderDTO {
 
+	@ApiModelProperty( notes = "User E-mail")
     private String email;
-    private String nomeCompleto;
+	
+	@ApiModelProperty( notes = "User Name")
+	private String nomeCompleto;
+	
+	@ApiModelProperty( notes = "User Shipping Address")
     private String shippingAdress;
+	
+	@ApiModelProperty(notes = "The database generated Order ID")
     private int idPedido;
+	
+	@ApiModelProperty(notes = "The order description")
     private String dsItemPedido;
+	
+	@ApiModelProperty(notes = "The order item quantity")
     private String qtdItemPedido;
+	
+	@ApiModelProperty( notes = "Item Amount")
     private BigDecimal vlPrecoItem;
+	
+	@ApiModelProperty( notes = "Total Amount")
     private BigDecimal vlPrecoTotal;
+	
+	@ApiModelProperty( notes = "Payment Gateway")
     private String formaPagto;
+	
+	@ApiModelProperty( notes = "Order Date")
     private String dtPedido;
+	
+	@ApiModelProperty( notes = "Order Status")
     private String statusPedido;
 
+    @ApiModelProperty( notes = "Transaction ID")
     private String idTransacao;
+    
+    @ApiModelProperty( notes = "Credit card number")
     private String nroCartao;
+    
+    @ApiModelProperty( notes = "Credit card validity")
     private String validadeCartao;
+    
+    @ApiModelProperty( notes = "Card banner")
     private String bandeira;
 
     public String getEmail() {
